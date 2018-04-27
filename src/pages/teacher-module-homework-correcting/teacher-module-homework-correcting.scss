@@ -1,0 +1,33 @@
+page-teacher-module-homework-correcting {
+    .content{
+        background-color:#f5f5f5;
+        
+    }
+
+    .scroll-content{
+        overflow: hidden;
+    }
+
+    .homework-name{
+        margin: 0.2rem;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .homework-time{
+        margin: 0;
+        color: grey;
+    }
+
+    .submit-lbl{
+        margin: 0;
+        color: grey;
+
+    }
+
+    .correct-lbl{
+        margin: 0;
+        color: grey;
+
+    }
+}

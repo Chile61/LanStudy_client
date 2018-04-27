@@ -1,0 +1,32 @@
+page-answer-module-publish {
+    .btn-text{
+        font-size: 12px;
+    }
+
+    #title-input{
+        background-color: white;        
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    #content-input{
+        background-color: white;
+        margin-top: 1rem;
+        padding-left: 1rem;
+        overflow:scroll;
+        overflow-y:hidden;
+        overflow-x:hidden;
+    }
+
+    .select-box{
+        max-width: 100%;
+    }
+
+    #my-row{
+        align-items: center;
+        justify-content: center;
+        height: 2.5rem;
+        margin-top: 1rem;
+    }
+
+}

@@ -1,0 +1,24 @@
+<!--
+  Generated template for the TeacherModuleQuestionObjectivePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-content >
+<ion-list>
+  <ion-item-sliding *ngFor="let question of question_list">
+		<button ion-item no-lines  (click)="clickItem(question.question_id)">
+		  <ion-label >
+		    <ion-label style="margin:0px">{{question.title_content}}</ion-label>
+		    <!-- <ion-label style="margin:0px">{{question.question_time}}</ion-label> -->
+		  </ion-label>
+		</button>
+
+    <ion-item-options side="right">
+      <button ion-button  color="danger" (click)="deleteItem(question.question_id)">删除</button>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
+</ion-content>

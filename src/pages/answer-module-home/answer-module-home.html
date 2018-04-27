@@ -1,0 +1,41 @@
+<!--
+  Generated template for the AnswerModuleHomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar color="primary">
+    <ion-buttons start>
+      <button ion-button clear>
+        <ion-icon name="mail" color="light"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>问答</ion-title>
+    <ion-buttons end>
+      <button ion-button clear (click)="onPublishBtnClick()">
+        <ion-icon name="create" color="light"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list #list>
+    <ion-item *ngFor="let item of posts" (click)="onPostClick(item.postId)">
+      <ion-avatar item-start>
+        <img src={{item.picPath}}>
+        <p>{{item.studentName}}</p>
+      </ion-avatar>
+      <h2>{{item.postTitle}}</h2>
+      <p>{{item.postContent}}</p>
+      <ion-note item-end id="date-note">{{item.createTime}}</ion-note>
+    </ion-item>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,64 @@
+<!--
+  Generated template for the WrongQModuleMainPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-toolbar mode="ios" color="primary">
+      <button ion-button clear small navPop >
+          <ion-icon class="icon ion-ios-arrow-back" style="color:white">
+          </ion-icon>
+      </button>
+      <ion-title>错题本</ion-title>
+      <ion-buttons end >
+        <button ion-button  clear small  style="color:white">
+            {{subject}}
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content >
+　　<ion-searchbar style=" background-color:#f5f5f5;" placeholder="输入关键词" >
+　　</ion-searchbar>
+    <ion-grid >
+      <ion-row >
+        <ion-col >
+          <ion-select [(ngModel)]="order_type" (ngModelChange)="onOrderChange($event)" placeholder="排序方式" style="max-width: 100%;background-color: white;margin-top:0.7rem" interface=popover  >
+            <ion-option>顺序1</ion-option>
+            <ion-option>顺序2</ion-option>
+          </ion-select>
+        </ion-col>
+
+        <ion-col >
+          <button ion-button block style="color:white" (click)="addQuestion()">
+              添加错题
+          </button>
+        </ion-col>
+
+        <ion-col >
+          <button ion-button block style="color:white" (click)="createFilter($event)">
+              筛选
+          </button>
+        </ion-col>        
+      </ion-row>
+    </ion-grid>
+
+    <ion-scroll scrollY="true" style="height:80%">
+    <ion-list >
+        <button ion-item  *ngFor="let question of question_list" (click)="clickItem(question.questionId)">
+          <label>{{QUESTION_TYPE[question.questionTypeId]}}<br>{{question.questionName}}</label>
+        </button>
+    </ion-list> 
+    </ion-scroll> 
+
+</ion-content>
+
+<ion-footer>
+  <button ion-button  block style="margin-bottom:0px"  >
+      复习全部
+  </button>  
+</ion-footer>

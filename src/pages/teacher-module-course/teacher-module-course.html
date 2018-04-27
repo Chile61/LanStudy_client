@@ -1,0 +1,60 @@
+<!--
+  Generated template for the TeacherModuleCoursePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar mode="ios" color="primary">
+    <ion-title>课程</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-select placeholder="请选择班级" class="select-box" [(ngModel)]="myClass" (ngModelChange)="curClassChange($event)">
+      <ion-option *ngFor="let class of classList">{{class.className}}</ion-option>
+    </ion-select>
+
+
+  <ion-card>
+    <ion-card-content class="card-content">
+      <button ion-item (click)="homeworkManagement()">
+        <ion-icon name="md-create" item-start class="card-icon"></ion-icon>
+        作业管理
+      </button>
+    </ion-card-content>
+  </ion-card>
+  <!--   <ion-card>
+    <ion-card-content class="card-content">
+      <button ion-item (click)="prepareLessons()">
+        <ion-icon name="book" item-start class="card-icon"></ion-icon>
+        备课资料
+      </button>
+    </ion-card-content>
+  </ion-card> -->
+  <ion-card>
+    <ion-card-content class="card-content">
+      <button ion-item (click)="homeworkCorrecting()">
+        <ion-icon name="checkmark-circle" item-start class="card-icon"></ion-icon>
+        作业批改
+      </button>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content class="card-content">
+      <button ion-item (click)="statistics()">
+        <ion-icon name="ios-pie-outline" item-start class="card-icon"></ion-icon>
+        统计排名
+      </button>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content class="card-content">
+      <button ion-item (click)="questionManagement()">
+        <ion-icon name="ios-paper" item-start class="card-icon"></ion-icon>
+        题目管理
+      </button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

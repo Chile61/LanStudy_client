@@ -1,0 +1,52 @@
+<!--
+这是练习模块首页
+显示所有试卷
+-->
+<ion-header>
+  <ion-toolbar color="primary">
+    <button ion-button clear small navPop>
+      <ion-icon class="icon ion-ios-arrow-back" color="light"></ion-icon>
+    </button>
+    <ion-title>写作业</ion-title>
+  </ion-toolbar>
+  <ion-segment [(ngModel)]="question">
+    <ion-segment-button value="unfinished">
+      未完成
+    </ion-segment-button>
+    <ion-segment-button value="finished">
+      已完成
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+<ion-content [ngSwitch]="question">
+
+  <ion-list *ngSwitchCase="'finished'">
+    <ion-item (click)="goToPaperPage(1)">
+      <h3 class="paper-title">七年级数学第一章</h3>
+      <p class="label-text">
+        2018.1.7&emsp;&emsp;数学&emsp;&emsp;分值：100
+      </p>
+    </ion-item>
+    <ion-item (click)="goToPaperPage(2)">
+      <h3 class="paper-title">七年级英语第一章</h3>
+      <p class="label-text">
+        2018.1.5&emsp;&emsp;英语&emsp;&emsp;分值：100
+      </p>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'unfinished'">
+    <ion-item (click)="goToPaperPage(1)">
+      <h3 class="paper-title">七年级英语第二章</h3>
+      <p class="label-text">
+        2018.1.7&emsp;&emsp;数学&emsp;&emsp;分值：100
+      </p>
+    </ion-item>
+    <ion-item (click)="goToPaperPage(2)">
+      <h3 class="paper-title">七年级数学第二章</h3>
+      <p class="label-text">
+        2018.1.5&emsp;&emsp;英语&emsp;&emsp;分值：100
+      </p>
+    </ion-item>
+  </ion-list>
+</ion-content>

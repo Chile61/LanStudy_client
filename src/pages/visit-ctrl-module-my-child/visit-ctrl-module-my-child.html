@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar mode="ios" color="primary">
+
+    <button ion-button clear small navPop color="light">
+      <ion-icon class="icon ion-ios-arrow-back">
+      </ion-icon>
+    </button>
+    <ion-title mode="ios">孩子管理</ion-title>
+    <ion-buttons end>
+      <button ion-button clear (click)="onAddBtnClick()">
+        <ion-icon name="add" color="light"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="outer-content">
+  <ion-list class="chat-sliding-demo">
+    <ion-item-sliding *ngFor="let child of children,let i =index" #item>
+      <ion-item>
+        <ion-avatar item-start>
+          <img [src]="child.picPath">
+        </ion-avatar>
+        <h2>{{child.nickname}}</h2>
+        <p>{{child.className}}
+          <p>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="danger" (click)="onDeleteBtnClick(i)">
+          <ion-icon name="trash"></ion-icon>
+          删除
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

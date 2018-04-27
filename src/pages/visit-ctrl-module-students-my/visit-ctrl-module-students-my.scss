@@ -1,0 +1,28 @@
+page-visit-ctrl-module-students-my {
+    .card-content{
+        padding: 0px;
+    }
+
+    .card-icon{
+        color: #0099ff;
+        font-size: 22px;
+        padding-top: 0.5rem;
+    }
+
+    .select-box{
+        max-width: 100%;
+        background-color: white;
+    }
+
+    #my-row{
+        align-items: center;
+        justify-content: center;
+        height: 3rem;
+    }
+
+    #my-grid{
+        margin-top: 1rem;
+        padding-left: 0.6rem;
+        padding-right: 0.6rem;
+    }
+}

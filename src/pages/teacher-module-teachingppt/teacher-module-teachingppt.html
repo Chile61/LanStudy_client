@@ -1,0 +1,20 @@
+<!--
+  Generated template for the TeacherModuleTeachingpptPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-content>
+  <ion-scroll scrollY="true" style="height:100%">
+    <button ion-item no-lines  *ngFor="let ppt of ppt_list"  >
+			<img item-start style="width: 40px; height: 40px;" src="./assets/icon/math.jpg">
+			
+      <ion-label >
+        <ion-label style="margin:0px">{{ppt.ppt_name}}</ion-label>
+      </ion-label>
+    </button>  
+  </ion-scroll>
+</ion-content>

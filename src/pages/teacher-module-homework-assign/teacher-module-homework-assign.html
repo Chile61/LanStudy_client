@@ -1,0 +1,94 @@
+<!--
+  Generated template for the TeacherModuleHomeworkAssignPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar mode="ios" color="primary">
+    <button ion-button clear small navPop>
+      <ion-icon class="icon ion-ios-arrow-back" style="color:white">
+      </ion-icon>
+    </button>
+
+    <ion-title>布置作业</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-grid style="background-color:white;">
+    <ion-row>
+      <ion-col col-4>
+        <ion-label>请选择班级</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-select [(ngModel)]="class" interface=popover class="my-select" (ngModelChange)="curClassChange($event)">
+          <ion-option *ngFor="let class of myClassList">{{class.className}}</ion-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-4>
+        <ion-label>请选择科目</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-select [(ngModel)]="subject" interface=popover class="my-select" (ngModelChange)="curSubjectChange($event)">
+          <ion-option *ngFor="let subject of mySubjectList">{{subject.name}}</ion-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+
+    <!-- <ion-row>
+      <ion-col col-4>
+        <ion-label>请选择教材</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-select [(ngModel)]="teaching_material" interface=popover class="my-select">
+          <ion-option>人教版必修一</ion-option>
+          <ion-option>人教版必修二</ion-option>
+          <ion-option>人教版必修三</ion-option>
+        </ion-select>
+      </ion-col>
+    </ion-row> -->
+  </ion-grid>
+
+  <button ion-item disable detail-none no-lines class="top-item">
+    <ion-label>已选择的题目</ion-label>
+    <button clear ion-button item-end (click)="refresh()">
+      刷新
+    </button>
+    <button clear ion-button item-end (click)="totalCheck()">
+      全选
+    </button>
+  </button>
+
+
+
+  <ion-scroll scrollY="true" style="height:67%">
+    <button ion-item no-lines *ngFor="let question of myQuestionList"  (click)="clickItem(question.questionId,$event)">
+
+      <button clear ion-button item-start style="padding:0px;">
+        <ion-checkbox [(ngModel)]="question.check"></ion-checkbox>
+      </button>
+      <ion-label >
+        <ion-label style="margin:0px">{{question.questionName}}</ion-label>
+      </ion-label>
+
+      <button outline ion-button item-end style="padding:0px" >
+        <ion-input  item-end type="number" placeholder="分值" style="max-width: 100px" [(ngModel)]="question.point" >
+        </ion-input> 
+      </button>    
+  
+      
+    </button>
+  </ion-scroll>
+
+</ion-content>
+
+<ion-footer>
+  <button ion-button block style="margin-bottom:0px" (click)="homeworkName()">
+    确认布置
+  </button>
+</ion-footer>

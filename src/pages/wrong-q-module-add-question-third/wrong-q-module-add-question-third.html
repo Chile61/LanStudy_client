@@ -1,0 +1,45 @@
+<!--
+  Generated template for the WrongQModuleAddQuestionThirdPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-toolbar mode="ios" color="primary">
+      <ion-title>添加错题</ion-title>
+      <ion-buttons end >
+        <button ion-button  clear small  style="color:white">
+            {{subject}}
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <img src="./assets/imgs/wrong-q-module-add-question-3.png" >
+  <ion-item>
+    <ion-textarea rows=5 cols=40  placeholder="输入备注" ></ion-textarea>  
+  </ion-item>
+  
+</ion-content>
+<ion-footer>
+  <ion-row  >
+    <ion-col col-4  >
+      <button ion-button block (click)="prev()">
+        上一步
+      </button>      
+    </ion-col>
+    <ion-col col-4  >
+      <button ion-button block (click)="quit()">
+        放弃
+      </button>
+    </ion-col>    
+    <ion-col col-4  >
+      <button ion-button block (click)="complete()">
+        完成
+      </button>
+    </ion-col>
+
+  </ion-row> 
+</ion-footer>

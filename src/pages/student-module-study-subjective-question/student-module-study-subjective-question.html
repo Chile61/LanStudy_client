@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <button ion-button clear small navPop>
+      <ion-icon class="icon ion-ios-arrow-back" style="font-size:24px" color="light"></ion-icon>
+    </button>
+    <ion-title>答题</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-end style="font-size:16px" (click)="submitQuestion()">
+        提交
+        <ion-icon ios="ios-checkmark" md="md-checkmark"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header>第{{currentId}}题</ion-card-header>
+    <ion-card-content>
+      {{studentQuestion.text}}
+    </ion-card-content>
+
+    <img src={{studentQuestion.picture}} />
+  </ion-card>
+
+  <ion-label style="padding-left:1rem;">
+    答题区
+  </ion-label>
+  <ion-card>
+    <ion-textarea id="textarea" rows=10 cols=40 padding></ion-textarea>
+  </ion-card>
+
+  <button padding large full (click)="takePicture()" id="camera-btn">
+    <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
+    拍照上传
+  </button>
+
+  <div>
+    <img src={{studentQuestion.answerPic}}/>
+  </div>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="primary">
+    <!--
+    <ion-buttons start light>
+      <button (click)="presentPopover()">
+        <ion-icon ios="ios-checkmark-circle" md="md-checkmark-circle">显示题目</ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons start light>
+      <button (click)="submitQuestion()">
+        <ion-icon ios="ios-checkmark-circle" md="md-checkmark-circle">提交</ion-icon>
+      </button>
+    </ion-buttons>
+    -->
+    <ion-buttons start>
+      <button ion-button icon-only class="option" (click)="preQuestion()">
+        <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons style="text-align:center">
+      <button ion-button center style="font-size:20px;color:primary">
+        显示题目
+      </button>
+    </ion-buttons>
+    <ion-buttons end (click)="nextQuestion()">
+      <button class="option" ion-button icon-only>
+        <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

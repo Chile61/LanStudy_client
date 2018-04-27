@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>我的</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-card class="home-card" [(ngModel)]="loginInfo" ngDefaultControl (click)="jumpToEditprofile()">
+    <ion-item>
+      <ion-avatar item-start>
+        <img src={{loginInfo.picPath}}/>
+      </ion-avatar>
+      <h2>{{loginInfo.nickname}}</h2>
+      <p>手机号：{{loginInfo.telnumber}}</p>
+    </ion-item>
+  </ion-card>
+
+  <ion-card class="home-card">
+    <ion-card-content class="card-content">
+      <button ion-item (click)="jumpToEditPassword()">
+        <ion-icon name="lock" item-start class="card-icon"></ion-icon>
+        修改密码
+      </button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="home-card">
+    <ion-card-content class="card-content">
+      <button ion-item>
+        <ion-icon name="information-circle" item-start class="card-icon"></ion-icon>
+        常见问题与反馈
+      </button>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card class="home-card">
+    <ion-card-content class="card-content">
+      <button ion-item (click)="logOut()">
+        <ion-icon name="log-out" item-start class="card-icon"></ion-icon>
+        退出登陆
+      </button>
+    </ion-card-content>
+  </ion-card>

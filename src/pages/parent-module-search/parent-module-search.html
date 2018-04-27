@@ -1,0 +1,61 @@
+<!--
+  Generated template for the ParentModuleSearchPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar color="primary">
+    <button ion-button clear small navPop>
+      <ion-icon class="icon ion-ios-arrow-back" color="light"></ion-icon>
+    </button>
+    <ion-title>搜索精品</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-row>
+    <ion-col col-10>
+      <ion-item no-lines id="input-bar">
+        <ion-input type="text" placeholder="请输入关键词" #keyword></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col col-2>
+      <button ion-button id="search-btn" (click)="onSearchBtnClick(keyword)">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+
+  <div id="segment-btn">
+    <ion-segment [(ngModel)]="goods">
+      <ion-segment-button value="lesson">
+        微课
+      </ion-segment-button>
+      <ion-segment-button value="teacher">
+        家教
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="goods">
+    <div *ngSwitchCase="'lesson'" #content>
+      <ion-item *ngFor="let card of lessonList" (click)="onGoodsClick(card,'teacher')">
+        <img class="img-area" src={{card.img}} item-start/>
+        <h2>{{card.name}}</h2>
+        <p>{{card.info}}</p>
+        <p class="prize-label">￥{{card.price}}</p>
+      </ion-item>
+    </div>
+
+    <div *ngSwitchCase="'teacher'">
+      <ion-item *ngFor="let card of teacherList" (click)="onGoodsClick(card,'teacher')">
+        <img class="img-area" src={{card.img}} item-start/>
+        <h2>{{card.name}}</h2>
+        <p>{{card.info}}</p>
+        <p class="prize-label">￥{{card.price}}</p>
+      </ion-item>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,49 @@
+<!--
+  Generated template for the WrongQModuleAddQuestionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-toolbar mode="ios" color="primary">
+      <ion-title>添加错题</ion-title>
+      <ion-buttons end >
+        <button ion-button  clear small  style="color:white">
+            {{subject}}
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content >
+	<img src="./assets/imgs/wrong-q-module-add-question-1.png" >
+  <img src="./assets/imgs/math.jpg" style="max-width:200px;max-height: 200px;margin-left:70px">
+  <div>
+    <button ion-button icon-only clear>
+      <ion-icon name="camera" style="color:black;margin-left:70px"></ion-icon>
+    </button>
+    <button ion-button icon-only clear>
+      <ion-icon name="image" style="color:black;margin-left:70px"></ion-icon>
+    </button>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-row  >
+    <ion-col col-4  >
+      
+    </ion-col>
+    <ion-col col-4  >
+      <button ion-button block (click)="quit()">
+        放弃
+      </button>
+    </ion-col>    
+    <ion-col col-4  >
+      <button ion-button block (click)="next()">
+        下一步
+      </button>
+    </ion-col>
+
+  </ion-row> 
+</ion-footer>

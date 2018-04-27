@@ -1,0 +1,32 @@
+page-parent-module-search {
+    #input-bar{
+        // position: absolute;
+        // margin: 0.5rem;
+        min-height: 1rem;
+        // width: 2rem;
+    }
+
+    #search-btn{
+        margin: 0%;
+        font-size: 15px;
+    }
+
+    #segment-btn{
+        padding: 0.5rem;
+    }
+
+    .prize-label{
+        color: orange;
+    }
+
+    .card-title{
+        font-weight: bold;
+    }
+
+    .img-area{
+        max-height: 100px;
+        max-width: 100px;
+        margin: auto;
+    }
+
+}

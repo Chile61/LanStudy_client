@@ -1,0 +1,34 @@
+<!--
+  Generated template for the TeacherModuleHomeworkCorrectingCanvasPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content #content scroll="false">
+  <div class="ion-canvas">
+    <canvas #canvas (pan)="touch($event)"></canvas>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-buttons start>
+      <button ion-button clear navPop>
+        返回
+        <!-- <ion-icon class="icon ion-ios-arrow-back" color="light"></ion-icon> -->
+      </button>
+    </ion-buttons>
+    <ion-buttons id="middle-btn">
+      <button ion-button clear (click)="onResetBtnClick()">
+        重置
+      </button>
+    </ion-buttons>
+
+    <ion-buttons end>
+      <button ion-button clear (click)="onAcceptBtnClick()">
+        完成
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

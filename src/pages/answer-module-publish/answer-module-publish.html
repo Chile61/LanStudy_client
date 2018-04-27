@@ -1,0 +1,49 @@
+<!--
+  Generated template for the AnswerModulePublishPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar color="primary">
+    <ion-buttons start>
+      <button ion-button clear navPop>
+        <p class="btn-text">取消</p>
+      </button>
+    </ion-buttons>
+
+    <ion-title>发新帖</ion-title>
+    <ion-buttons end>
+      <button ion-button clear (click)="onPublishBtnClick(postTitle, postContent, gradeSelect, subjectSelect)">
+        <p class="btn-text" >发布</p>
+      </button>
+    </ion-buttons>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <ion-input #postTitle placeholder="请输入标题" id="title-input"></ion-input>
+  </div>
+  <div style="background-color:white;">
+      <ion-row id="my-row">
+        <ion-col>
+          <ion-select #gradeSelect placeholder="请选择年级" class="select-box" class="select-box">
+            <ion-option>初一</ion-option>
+          </ion-select>
+        </ion-col>
+        <ion-col>
+          <ion-select #subjectSelect placeholder="请选择科目" class="select-box" class="select-box">
+            <ion-option>数学</ion-option>
+            <ion-option>英语</ion-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+  </div>
+  <div>
+    <ion-textarea #postContent placeholder="请输入内容" id="content-input" rows=20 clearInput="true"></ion-textarea>
+  </div>
+</ion-content>

@@ -1,0 +1,68 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <button ion-button clear small navPop>
+        <ion-icon class="icon ion-ios-arrow-back" color="light"></ion-icon>
+      </button>
+      <ion-title>我的精品</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  
+  <ion-content>
+    
+  
+    <div id="segment-btn">
+      <ion-segment [(ngModel)]="goods">
+        <ion-segment-button value="lesson">
+          微课
+        </ion-segment-button>
+        <ion-segment-button value="teacher">
+          家教
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+  
+    <div [ngSwitch]="goods">
+      <div *ngSwitchCase="'lesson'" #content>
+        <ion-card *ngFor="let card of lessonList" (click)="onGoodsClick(card,'lesson')">
+          <ion-row>
+            <ion-col>
+              <img src={{card.img}} />
+            </ion-col>
+            <ion-col>
+              <ion-card-header class="card-title">
+                {{card.name}}
+              </ion-card-header>
+              <div>
+                {{card.info}}
+              </div>
+              <ion-label class="prize-label">
+                ￥{{card.price}}
+              </ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </div>
+      <div *ngSwitchCase="'teacher'">
+        <ion-card *ngFor="let card of teacherList" (click)="onGoodsClick(card,'teacher')">
+          <ion-row>
+            <ion-col>
+              <img src={{card.img}} />
+            </ion-col>
+            <ion-col>
+              <ion-card-header class="card-title">
+                {{card.name}}
+              </ion-card-header>
+              <div>
+                {{card.info}}
+              </div>
+              <ion-label class="prize-label">
+                ￥{{card.price}}
+              </ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </div>
+    </div>
+  
+  </ion-content>
